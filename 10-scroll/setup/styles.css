@@ -61,6 +61,7 @@ Global Styles
 */
 html {
   scroll-behavior: smooth;
+  /* 이거 어시문 해당 섹션으로 그냥 넘김 */
 }
 *,
 ::after,
@@ -242,6 +243,7 @@ nav {
 }
 .show-links {
   height: 200px;
+  /* hard coded height... */
 }
 .links a {
   background: var(--clr-white);
