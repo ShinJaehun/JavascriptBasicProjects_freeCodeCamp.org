@@ -189,7 +189,8 @@ Slider
   max-width: 80rem;
   position: relative;
   border-radius: 0.5rem;
-  overflow: hidden;
+  overflow: hidden; 
+  /* 이게 slide에서 가장 중요한 */
   margin-top: 4rem;
 }
 .slide {
@@ -200,7 +201,7 @@ Slider
   color: var(--clr-white);
   display: grid;
   place-items: center;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out; /* 이게 slide의 동작 속력 */
   text-align: center;
 }
 .slide-img {
