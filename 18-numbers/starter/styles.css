@@ -176,3 +176,11 @@ article:nth-of-type(2) {
 article:nth-of-type(3) {
   border-bottom-color: #a855f7;
 }
+
+article:nth-of-type(4) {
+  border-bottom-color: black;
+}
+
+article:nth-of-type(5) {
+  border-bottom-color: green;
+}
