@@ -29,25 +29,70 @@ class Gallery {
     this.nextImage = this.nextImage.bind(this);
     this.prevImage = this.prevImage.bind(this);
     this.chooseImage = this.chooseImage.bind(this)
-    
+
+  //   // 당연히 이 this는 container를 가리키기 때문에 class 내부의 값에 접근할 수 없음
+  //   this.container.addEventListener('click', function(e){
+  //     console.log(this) 
+  //     this.setMainImage(e.target)
+  //     this.modalImages.innerHTML = this.list.map(function(image){
+  //       return `<img 
+  //                 src="${image.src}"
+  //                 title="${image.title}"
+  //                 data-id="${image.dataset.id}"
+  //                 class="${selectedImage.dataset.id === image.dataset.id
+  //                    ? 'modal-img selected'
+  //                    : 'modal-img'}" 
+  //               />`
+  //     }).join('')
+  //   })
+
+      // bind를 하면 얘기가 달라지지...
+    // this.container.addEventListener('click', function(e){
+    //   // console.log(e.target)
+    //   // <img
+    //   //   src="./images/nature-1.jpeg"
+    //   //   title="nature-1"
+    //   //   class="img"
+    //   //   data-id="1"
+    //   //   alt="nature-1"
+    //   // />
+    //   if (e.target.classList.contains('img')) {
+    //     this.openModal(e.target, this.list)
+    //     // 그럼... 여기서 this는 container가 아니라 Gallery class가 되어야지
+    //   }
+    // }.bind(this))
+
+    // bind가 없을 때는 oM이 function인 것도 모르는데...
+    // bind를 넣어주면 정상적으로 동작함...
+    // 근데 여기에서는 arrow function이나 정상적인 function이나 호출하는데 차이가 없음!
     this.container.addEventListener('click', function(e){
-      // console.log(e.target)
-      // <img
-      //   src="./images/nature-1.jpeg"
-      //   title="nature-1"
-      //   class="img"
-      //   data-id="1"
-      //   alt="nature-1"
-      // />
       if (e.target.classList.contains('img')) {
+        // this.oM(e.target, this.list)
         this.openModal(e.target, this.list)
-        // 그럼... 여기서 this는 container가 아니라 Gallery class가 되어야지
       }
     }.bind(this))
+  }
 
+  oM = (selectedImage, list) => {
+    // console.log(this)
+    // Gallery 
+    this.setMainImage(selectedImage)
+    this.modalImages.innerHTML = list.map(function(image){
+      return `<img 
+                src="${image.src}"
+                title="${image.title}"
+                data-id="${image.dataset.id}"
+                class="${selectedImage.dataset.id === image.dataset.id
+                   ? 'modal-img selected'
+                   : 'modal-img'}" 
+              />`
+    }).join('')
+    this.modal.classList.add('open')
   }
 
   openModal(selectedImage, list) {
+    // console.log(this)
+    // Gallery 
     this.setMainImage(selectedImage)
     this.modalImages.innerHTML = list.map(function(image){
       return `<img 
@@ -116,10 +161,10 @@ class Gallery {
       selected.classList.remove('selected')
       this.setMainImage(e.target)
       e.target.classList.add('selected')
-
     }
   }
 }
 
 const nature = new Gallery(getElement('.nature'))
 const cities = new Gallery(getElement('.city'))
+
