@@ -69,6 +69,8 @@ class Gallery {
   }
   nextImage() {
     const selected = this.modalImages.querySelector('.selected');
+    console.log(selected)
+
     const next =
       selected.nextElementSibling || this.modalImages.firstElementChild;
     selected.classList.remove('selected');
@@ -77,6 +79,8 @@ class Gallery {
   }
   prevImage() {
     const selected = this.modalImages.querySelector('.selected');
+    console.log(selected)
+
     const prev =
       selected.previousElementSibling || this.modalImages.lastElementChild;
     selected.classList.remove('selected');
