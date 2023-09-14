@@ -21,6 +21,7 @@ const fetchDadJoke = async () => {
             throw new Error(' error ')
         }
         const data = await response.json()
+        console.log(data)
 
         result.textContent = data.joke
     } catch(error) {
