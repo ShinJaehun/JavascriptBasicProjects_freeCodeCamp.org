@@ -246,7 +246,7 @@ h4 {
 }
 
 /* MORE CSS FOR JS */
-/* 
+
 .slide-container {
   display: flex;
   position: relative;
@@ -272,4 +272,4 @@ h4 {
 }
 .slide.last {
   transform: translateX(-100%);
-} */
+}
