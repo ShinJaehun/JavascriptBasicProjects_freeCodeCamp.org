@@ -17,6 +17,18 @@ const people = [
     job: 'designer',
     text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quoeius recusandae officia voluptas sint deserunt dicta nihil nam omnis?`,
   },
+  {
+    img: 'https://www.course-api.com/images/people/person-2.jpeg',
+    name: 'jason doe',
+    job: 'designer',
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quoeius recusandae officia voluptas sint deserunt dicta nihil nam omnis?`,
+  },
+  {
+    img: 'https://www.course-api.com/images/people/person-2.jpeg',
+    name: 'val doe',
+    job: 'designer',
+    text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quoeius recusandae officia voluptas sint deserunt dicta nihil nam omnis?`,
+  },
 ];
 
 export default people;
