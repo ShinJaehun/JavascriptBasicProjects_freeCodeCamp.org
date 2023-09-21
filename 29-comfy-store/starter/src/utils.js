@@ -15,10 +15,28 @@ const getElement = (selection) => {
   throw new Error(`Please check "${selection}" selector, no such element exist`)
 }
 
-const formatPrice = () => {}
+const formatPrice = (price) => {
+  let formattedPrice = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  }).format((price / 100).toFixed(2))
+  return formattedPrice
+}
 
-const getStorageItem = () => {}
-const setStorageItem = () => {}
+const getStorageItem = (name) => {
+  let storageItem = localStorage.getItem(name)
+  if (storageItem) {
+    storageItem = JSON.parse(localStorage.getItem(name))
+    // storageItem = JSON.parse(storageItem) // 같은 거 아니?
+  } else {
+    storageItem = []
+  }
+  return storageItem
+}
+
+const setStorageItem = (name, item) => {
+  localStorage.setItem(name, JSON.stringify(item))
+}
 
 export {
   allProductsUrl,
